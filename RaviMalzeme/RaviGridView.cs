@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Views.Grid;
+using RaviDataManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace RaviMalzeme
 {
     public class RaviGridView : GridView
     {
+        public GRIDFTIP GridFTip { get; set; }
+        public GRIDEKEY GridEKey { get; set; }
         private CancellationToken token { get; set; }
         public CancellationTokenSource tokenSource { get; set; }
         public event EventHandler<int> GetData = delegate { };

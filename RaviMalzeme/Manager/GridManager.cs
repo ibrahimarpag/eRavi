@@ -20,7 +20,7 @@ namespace RaviMalzeme.Manager
             this.sirket = sirket;
             dbCon = new SqlConnection(this.sirket.Baglanti);
         }
-        public void SaveGridColumns(GridView grdv)
+        public void SaveGridColumns(RaviGridView grdv)
         {
             List<IRGridSet> ColumnList = new List<IRGridSet>();
             foreach (GridColumn item in grdv.Columns)
@@ -36,7 +36,7 @@ namespace RaviMalzeme.Manager
                 }
             }
             var grid_cols = JsonConvert.SerializeObject(ColumnList);
-            dbCon.Execute("update sistem..tb_grid_set set grid_cols=@grid_cols where kullanicino=1 and firmano=1 and grid_ftip=3 and grid_ekey=31", new { grid_cols });
+            dbCon.Execute($"update sistem..tb_grid_set set grid_cols=@grid_cols where kullanicino=1 and firmano=1 and grid_ftip={(int)grdv.GridFTip} and grid_ekey={(int)grdv.GridEKey}", new { grid_cols });
         }
         private string GetFilterValue(string filterString)
         {
@@ -57,7 +57,7 @@ namespace RaviMalzeme.Manager
 
             return filterValue;
         }
-        public void FillGridColumns(GridView grdv)
+        public void FillGridColumns(RaviGridView grdv)
         {
             grdv.OptionsBehavior.Editable = false;
             grdv.OptionsView.ShowGroupPanel = false;
@@ -70,7 +70,7 @@ namespace RaviMalzeme.Manager
             grdv.OptionsView.ShowFooter = true;
 
             grdv.Columns.Clear();
-            var ColumnRow = dbCon.Query<dynamic>("select * from sistem..tb_grid_set where kullanicino=1 and firmano=1 and grid_ftip=3 and grid_ekey=31").FirstOrDefault();
+            var ColumnRow = dbCon.Query<dynamic>($"select * from sistem..tb_grid_set where kullanicino=1 and firmano=1 and grid_ftip={(int)grdv.GridFTip} and grid_ekey={(int)grdv.GridEKey}").FirstOrDefault();
             if (ColumnRow != null)
             {
                 if (ColumnRow.grid_cols is string cols)

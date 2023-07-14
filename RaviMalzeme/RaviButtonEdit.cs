@@ -2,6 +2,7 @@
 
 using DevExpress.XtraEditors.Controls;
 using PetekKernel.Fonksiyon;
+using System;
 using System.Drawing;
 using System.Linq;
 
@@ -9,10 +10,11 @@ namespace RaviMalzeme
 {
     public class RaviButtonEdit : DevExpress.XtraEditors.ButtonEdit
     {
+        public event EventHandler ListeClick = delegate { };
         private bool LB { get; set; }
         private bool GLB { get; set; }
-        public bool RaviListButton { get => LB; set { LB = value; AddListButton(); } }
-        public bool RaviGrupListButton { get => GLB; set { GLB = value; AddGrupListButton(); } }
+        public bool RaviListButton { get => LB; set { LB = value; if (value) AddListButton("liste"); } }
+        public bool RaviGrupListButton { get => GLB; set { GLB = value; if (value) AddListButton("listgrup"); } }
         public RaviButtonEdit() : base()
         {
             LB = false;
@@ -29,65 +31,43 @@ namespace RaviMalzeme
             base.Properties.AutoHeight = false;
             base.Height = 22;
             base.Properties.Buttons.Clear();
-            AddListButton();
-            AddGrupListButton();
-            base.LostFocus += (sender, e) =>
-            {
-                base.Properties.AppearanceFocused.BorderColor = Color.Red;
-                base.Properties.AppearanceFocused.Options.UseBorderColor = false;
-            };
+            if (RaviListButton)
+                AddListButton("liste");
+            if (RaviGrupListButton)
+                AddListButton("listgrup");
         }
-        private void AddListButton()
+        private void AddListButton(string tag)
         {
             if (!DesignMode)
             {
-                if (RaviListButton)
+                var btn = new DevExpress.XtraEditors.Controls.EditorButton();
+                btn.Tag = tag;
+                btn.Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
+                btn.ImageOptions.SetSvgImage(tag, 16, 16);
+                //btn.Click += Btn_Click;
+                var deleteBtn = new DevExpress.XtraEditors.Controls.EditorButton()
                 {
-                    if (base.Properties.Buttons.Count > 0)
-                    {
-                        if (base.Properties.Buttons.ToList().Where<EditorButton>(x => x.Tag.StrX() == "liste") is EditorButton b)
-                            base.Properties.Buttons.Remove(b);
-                    }
-                    var btn = new DevExpress.XtraEditors.Controls.EditorButton();
-                    btn.Tag = "liste";
-                    btn.Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
-                    btn.ImageOptions.SetSvgImage("liste", 16, 16);
-                    //btn.Click += Btn_Click;
-
-                    base.Properties.Buttons.Add(btn);
-                }
-                else
+                    Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Delete,
+                    Visible = false
+                };
+                deleteBtn.Click += Delete_Click;
+                btn.Click += Liste_Click;
+                this.TextChanged += (sender, e) =>
                 {
-                    if (base.Properties.Buttons.Where<EditorButton>(x => x.Tag.StrX() == "liste") is EditorButton b)
-                        base.Properties.Buttons.Remove(b);
-                }
+                    if (string.IsNullOrEmpty(base.Text)) deleteBtn.Visible = false;
+                    else deleteBtn.Visible = true;
+                };
+                base.Properties.Buttons.Add(deleteBtn);
+                base.Properties.Buttons.Add(btn);
             }
         }
-        private void AddGrupListButton()
+        public void Delete_Click(object sender,EventArgs e)
         {
-            if (!DesignMode)
-            {
-                if (RaviGrupListButton)
-                {
-                    if (base.Properties.Buttons.Count > 0)
-                    {
-                        if (base.Properties.Buttons.ToList().Where<EditorButton>(x => x.Tag.StrX() == "listgrup") is EditorButton b)
-                            base.Properties.Buttons.Remove(b);
-                    }
-                    var btn = new DevExpress.XtraEditors.Controls.EditorButton();
-                    btn.Tag = "listgrup";
-                    btn.Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;
-                    btn.ImageOptions.SetSvgImage("listgrup", 16, 16);
-                    //btn.Click += Btn_Click;
-
-                    base.Properties.Buttons.Add(btn);
-                }
-                else
-                {
-                    if (base.Properties.Buttons.Where<EditorButton>(x => x.Tag.StrX() == "listgrup") is EditorButton b)
-                        base.Properties.Buttons.Remove(b);
-                }
-            }
+            base.Text = string.Empty;
+        }
+        public void Liste_Click(object sender,EventArgs e)
+        {
+            ListeClick.Invoke(sender, e);
         }
     }
 }

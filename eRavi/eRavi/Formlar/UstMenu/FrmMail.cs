@@ -11,16 +11,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RaviMalzeme.BaseForms;
+using PetekKernel;
 
 namespace eRavi.Formlar.UstMenu
 {
-    public partial class FrmMail : XtraForm
+    public partial class FrmMail : BasePropertyForm
     {
-        public FrmMail()
+        public FrmMail(Sirket sirket) : base(sirket)
         {
             InitializeComponent();
-            this.Controls.Add(new TopStackPanel("Genel Kullanıcı, Hareket Ekstresi Mail.frx", FORMTIP.MAIL));
+            base.ustMenu = new TopStackPanel("Genel Kullanıcı, Hareket Ekstresi Mail.frx", FORMTIP.MAIL);
+            this.Controls.Add(ustMenu);
             this.Height += 65;
+            base.ustMenu.ClickButton += (sender, e) =>
+            {
+                if (e == USTMENUBUTTONTIP.KAPAT) this.Close();
+            };
             this.SetFormIcon(FORMTIP.MAIL, "MAİL");
             this.Resize += FrmMail_ResizeEnd;
         }

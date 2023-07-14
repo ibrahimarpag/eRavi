@@ -12,6 +12,7 @@ namespace RaviMalzeme.Manager
 {
     public class TopStackPanel : PanelControl
     {
+        public event EventHandler<USTMENUBUTTONTIP> ClickButton = delegate { };
         FORMTIP FormTip { get; set; }
         public TopStackPanel(string Baslik, FORMTIP formTip)
         {
@@ -38,7 +39,7 @@ namespace RaviMalzeme.Manager
         }
         private void FillStack(StackPanel stack)
         {
-            stack.Controls.Add(GetTopButton("Kapat", "skapat"));
+            stack.Controls.Add(GetTopButton("Kapat", "skapat", USTMENUBUTTONTIP.KAPAT));
             switch (FormTip)
             {
                 case FORMTIP.NONE:
@@ -47,36 +48,43 @@ namespace RaviMalzeme.Manager
                     {
                         var drp = GetTopDropdown("Liste", "dikeyrapor", new[]
                            {
-                                new { Caption = "Getir", resim = "getir"},
-                                new { Caption = "Göster", resim = "goster"},
-                                new { Caption = "Rapor Seç", resim = "sec"},
-                                new { Caption = "Sıralama", resim = "sirala"},
-                                new { Caption = "Excel", resim = "excel"},
-                                new { Caption = "Tasarla", resim = "tasarla"}
+                                new { Caption = "Getir", resim = "getir" ,Tag = USTMENUBUTTONTIP.LGETIR},
+                                new { Caption = "Göster", resim = "goster",Tag = USTMENUBUTTONTIP.LGOSTER},
+                                new { Caption = "Rapor Seç", resim = "secyesil",Tag = USTMENUBUTTONTIP.LRAPORSEC},
+                                new { Caption = "Sıralama", resim = "sirala",Tag = USTMENUBUTTONTIP.LSIRALAMA},
+                                new { Caption = "Excel", resim = "excel",Tag = USTMENUBUTTONTIP.LEXCEL},
+                                new { Caption = "Tasarla", resim = "tasarla",Tag = USTMENUBUTTONTIP.LTASARLA}
                             });
                         stack.Controls.Add(drp);
-                        stack.Controls.Add(GetTopButton("Sms Gönder", "smsgonder"));
+                        stack.Controls.Add(GetTopButton("Sms Gönder", "smsgonder", USTMENUBUTTONTIP.SMSGONDER));
                     }
                     break;
                 case FORMTIP.MAIL:
                     {
                         var drp = GetTopDropdown("Liste", "dikeyrapor", new[]
                            {
-                                new { Caption = "Getir", resim = "getir"},
-                                new { Caption = "Göster", resim = "goster"},
-                                new { Caption = "Rapor Seç", resim = "sec"},
-                                new { Caption = "Sıralama", resim = "sirala"},
-                                new { Caption = "Excel", resim = "excel"},
-                                new { Caption = "Tasarla", resim = "tasarla"}
+                               new { Caption = "Getir", resim = "getir" ,Tag = USTMENUBUTTONTIP.LGETIR},
+                                new { Caption = "Göster", resim = "goster",Tag = USTMENUBUTTONTIP.LGOSTER},
+                                new { Caption = "Rapor Seç", resim = "secyesil",Tag = USTMENUBUTTONTIP.LRAPORSEC},
+                                new { Caption = "Sıralama", resim = "sirala",Tag = USTMENUBUTTONTIP.LSIRALAMA},
+                                new { Caption = "Excel", resim = "excel",Tag = USTMENUBUTTONTIP.LEXCEL},
+                                new { Caption = "Tasarla", resim = "tasarla",Tag = USTMENUBUTTONTIP.LTASARLA}
                             });
                         stack.Controls.Add(drp);
-                        stack.Controls.Add(GetTopButton("Mail Gönder", "mailgonder"));
+                        stack.Controls.Add(GetTopButton("Mail Gönder", "mailgonder", USTMENUBUTTONTIP.MAILGONDER));
                     }
                     break;
                 case FORMTIP.TAKVIM:
                     {
-                        stack.Controls.Add(GetTopButton("Bugün", "takvimgun"));
-                        stack.Controls.Add(GetTopButton("3 Günlük", "takvimgun"));
+                        stack.Controls.Add(GetTopButton("Bugün", "takvimgun", USTMENUBUTTONTIP.BUGUN));
+                        stack.Controls.Add(GetTopButton("3 Günlük", "takvimgun", USTMENUBUTTONTIP.GUNLUK3));
+                    }
+                    break;
+                case FORMTIP.STOKLISTE:
+                case FORMTIP.CARILISTE:
+                case FORMTIP.TANIM:
+                    {
+                        stack.Controls.Add(GetTopButton("Seç", "secyesil", USTMENUBUTTONTIP.SEC));
                     }
                     break;
                 default:
@@ -91,11 +99,12 @@ namespace RaviMalzeme.Manager
             stack.LayoutDirection = StackPanelLayoutDirection.RightToLeft;
             return stack;
         }
-        private SimpleButton GetTopButton(string text, string resim)
+        private SimpleButton GetTopButton(string text, string resim, object tag)
         {
             SimpleButton btn = new SimpleButton()
             {
                 Text = text,
+                Tag = tag,
                 Width = 50,
                 Height = 60,
                 Cursor = DevExpress.Utils.Controls.DXCursors.Hand,
@@ -109,6 +118,7 @@ namespace RaviMalzeme.Manager
             btn.Click += Btn_Click;
             return btn;
         }
+
         private DropDownButton GetTopDropdown(string text, string resim, dynamic[] values)
         {
             DropDownButton btn = new DropDownButton()
@@ -135,7 +145,8 @@ namespace RaviMalzeme.Manager
             DXPopupMenu popupMenu = new DXPopupMenu();
             foreach (var item in values)
             {
-                var dx = new DXMenuItem() { Caption = item.Caption };
+                var dx = new DXMenuItem() { Caption = item.Caption, Tag = item.Tag };
+                dx.Click += Btn_Click;
                 dx.ImageOptions.SetSvgImage((string)item.resim, 24, 24);
                 popupMenu.Items.Add(dx);
             }
@@ -144,6 +155,18 @@ namespace RaviMalzeme.Manager
         private void Btn_Click(object sender, EventArgs e)
         {
 
+            if (sender is DXMenuItem dbtn)
+            {
+                lock (dbtn) if (dbtn.Tag is USTMENUBUTTONTIP t) this.ClickButton.Invoke(sender, t);
+            }
+            else if (sender is DXPopupMenu dxbtn)
+            {
+                lock (dxbtn) if (dxbtn.Tag is USTMENUBUTTONTIP t) this.ClickButton.Invoke(sender, t);
+            }
+            else if (sender is SimpleButton btn)
+            {
+                lock (btn) if (btn.Tag is USTMENUBUTTONTIP t) this.ClickButton.Invoke(sender, t);
+            }
         }
     }
 }

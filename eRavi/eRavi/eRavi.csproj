@@ -95,6 +95,30 @@
     <Compile Include="Formlar\Giris\FrmGiris.Designer.cs">
       <DependentUpon>FrmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Listeler\FrmCariListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmCariListe.Designer.cs">
+      <DependentUpon>FrmCariListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmGenelListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmGenelListe.Designer.cs">
+      <DependentUpon>FrmGenelListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmSaticiListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmSaticiListe.Designer.cs">
+      <DependentUpon>FrmSaticiListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmStokListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Listeler\FrmStokListe.Designer.cs">
+      <DependentUpon>FrmStokListe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\UstMenu\FrmMail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Giris\FrmGiris.resx">
       <DependentUpon>FrmGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Listeler\FrmCariListe.resx">
+      <DependentUpon>FrmCariListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Listeler\FrmGenelListe.resx">
+      <DependentUpon>FrmGenelListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Listeler\FrmStokListe.resx">
+      <DependentUpon>FrmStokListe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\UstMenu\FrmMail.resx">
       <DependentUpon>FrmMail.cs</DependentUpon>
@@ -170,8 +203,6 @@
       <Name>RaviMalzeme</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formlar\Kartlar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

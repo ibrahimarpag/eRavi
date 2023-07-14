@@ -1,5 +1,6 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Utils.Drawing;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
@@ -39,6 +40,7 @@ namespace eRavi.Formlar
         {
             this.sirket = sirket;
             InitializeComponent();
+            this.IconOptions.SetImage("logo.png");
             pictureEdit1.Image = pictureEdit1.Image.SetImage("xsil.png");
             raviMenu = new RaviMenu(this.sirket, this.solMenu, this.ribbonPageGroup1, this.footerMenu, lookOpenForms);
             raviMenu.LoadUstMenu();
@@ -48,7 +50,21 @@ namespace eRavi.Formlar
                 footerMenu.ItemLinks.Clear();
                 GirisEkraniAc();
             };
-
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += (sender, e) =>
+            {
+                if (btnBildirim.ItemAppearance.Normal.BackColor == Color.Orange) 
+                {
+                    btnBildirim.ItemAppearance.Normal.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    //Color.FromArgb(206, 221, 245)
+                    btnBildirim.ItemAppearance.Normal.BackColor = Color.Orange;
+                }
+            };
+            timer.Start();
             btnKilitle.ImageOptions.SetSvgImage("kilit", 20, 20);
             btnBildirim.ImageOptions.SetSvgImage("bildirim", 20, 20);
             btnAcikForm.ImageOptions.SetSvgImage("pencereler", 20, 20);
@@ -57,7 +73,7 @@ namespace eRavi.Formlar
             btnAcikForm.ItemClick += (sender, e) => { lookOpenForms.ShowPopup(); };
             btnBildirim.ItemClick += (sender, e) =>
             {
-                //this.ShowBildirim();
+                this.ShowBildirim();
                 //DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this, bildirimGroup, new FlyoutProperties() { Alignment = ContentAlignment.MiddleRight });
                 //bildirimGroup.Visible = true;
             };
@@ -107,7 +123,8 @@ namespace eRavi.Formlar
             Loader(true);
 
             Application.DoEvents();
-            sirket = new Sirket(BaglanY.Aktar, P.RaviFirma);
+            //sirket = new Sirket(BaglanY.Aktar, P.RaviFirma);
+            sirket = (sender as FrmGiris).sirket;
             RaviDesktop rd = new RaviDesktop(this, this.solMenu, this.panelDesktop, this.panelTrash);
             rd.LoadDesktop();
             rd.StardDragDrop();
@@ -117,12 +134,12 @@ namespace eRavi.Formlar
                 f2.SizeChanged += F2_ResizeEnd;
                 f2.Show(this);
             };
-
-            raviMenu.sirket = (sender as FrmGiris).sirket;
+            raviMenu.sirket = sirket;
             raviMenu.LoadSolMenu();
             raviMenu.LoadAltMenu(e);
             if (sender is Form f) f.Hide();
-            //TempTable.LoadStokListe(sirket);
+            TempTable.LoadStokListe(sirket);
+            TempTable.LoadCariListe(sirket);
             await Task.Delay(750);
             Loader(false);
         }
@@ -142,14 +159,14 @@ namespace eRavi.Formlar
                         break;
                     case RAVIUSTMENU.SMS:
                         {
-                            var fs = new FrmSms() { ShowInTaskbar = false, StartPosition = FormStartPosition.CenterScreen };
+                            var fs = new FrmSms(this.sirket) { ShowInTaskbar = false, StartPosition = FormStartPosition.CenterScreen };
                             fs.SizeChanged += F2_ResizeEnd;
                             fs.Show(this);
                         }
                         break;
                     case RAVIUSTMENU.MAIL:
                         {
-                            var fm = new FrmMail() { ShowInTaskbar = false, StartPosition = FormStartPosition.CenterScreen };
+                            var fm = new FrmMail(this.sirket) { ShowInTaskbar = false, StartPosition = FormStartPosition.CenterScreen };
                             fm.SizeChanged += F2_ResizeEnd;
                             fm.Show(this);
 
@@ -159,7 +176,7 @@ namespace eRavi.Formlar
                         break;
                     case RAVIUSTMENU.TAKVIM:
                         {
-                            var fm = new FrmTakvim() { ShowInTaskbar = false, StartPosition = FormStartPosition.CenterScreen };
+                            var fm = new FrmTakvim(this.sirket) { ShowInTaskbar = false, StartPosition = FormStartPosition.CenterScreen };
                             fm.SizeChanged += F2_ResizeEnd;
                             fm.Show(this);
                         }

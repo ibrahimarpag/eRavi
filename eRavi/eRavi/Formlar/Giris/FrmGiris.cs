@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RaviDataManager.Manager;
 using RaviMalzeme;
+using RaviMalzeme.Manager;
 
 namespace eRavi.Formlar.Giris
 {
@@ -92,7 +93,7 @@ namespace eRavi.Formlar.Giris
                 f.SelectedRow += (s, e1) =>
                 {
                     f.Close();
-                    btnDil.ImageOptions.SetImageFile($"{AppDomain.CurrentDomain.BaseDirectory}Resim/bayraklar/{e1}.png");
+                    btnDil.ImageOptions.SetImageFile($"{e1}.png");
                 };
                 f.ShowDialog();
             };
@@ -111,7 +112,7 @@ namespace eRavi.Formlar.Giris
             btnVazgec.AllowFocus = false;
             btnDil.AllowFocus = false;
 
-            btnDil.ImageOptions.SetImageFile(AppDomain.CurrentDomain.BaseDirectory.ToString() + "Resim/bayraklar/Turkiye.png");
+            btnDil.ImageOptions.SetImageFile("Turkiye.png");
             btnDestek.ImageOptions.SetSvgImage("destek", 48, 48);
             btnKlavye.ImageOptions.SetSvgImage("klavye", 48, 48);
             btnVazgec.ImageOptions.SetSvgImage("xkapat", 48, 48);
@@ -153,7 +154,7 @@ namespace eRavi.Formlar.Giris
             }
             else
             {
-                //AnaMenu.ShowUyari("Uyarı", result.Mesaj, "Tamam");
+                this.Owner.ShowUyari("Uyarı", result.Mesaj, "Tamam");
             }
             Loader(false);
         }

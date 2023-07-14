@@ -16,7 +16,115 @@ namespace RaviMalzeme
 {
     public static class RaviResimKontrol
     {
-        private static string KlasorYolu { get => @"F:\2023-01-21\Masaüstü\Firmalar\yeni ravi\"; }
+        private static string KlasorYolu { get => $"{AppDomain.CurrentDomain.BaseDirectory}/Resimler/"; }
+        public static string GetBildirimHtml()
+        {
+            return @"
+<div class=""root"" id=""root"">
+	<div class=""content"">
+		<div class=""mail-content"">
+			<div class=""from"" id=""from"">${baslik}</div>
+			<div class=""subject"" id=""subject"">${kisa_aciklama}</div>
+			<div class=""tarih"">${tarih}</div>
+		</div>
+	</div>
+</div>";
+        }
+        public static string GetBildirimStyle()
+        {
+            return @"
+.root {
+	height: 84px;
+	font-family: ""Segoe UI"";
+	font-size: 14px;
+	background-color: @Window;
+	border-style: solid;
+	border-width: 0px;
+	border-left-width: 0px;
+	border-left-color: DarkGray;
+    margin-bottom:10px;
+}
+.content {
+	margin-top:18%;
+	margin-bottom:18%;
+	margin-Left:6px;
+	margin-right:20px;
+	display:flex;
+	background-color:@Window;
+}
+.initials {
+	color: @White;
+	font-weight: bold;
+	background-color: @Primary;
+	border-radius: 100px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.photo {
+	width:32px;
+	height:32px;
+	border-radius:100px;
+	border: solid 1px @Primary;
+	object-fit:contain;
+	background-color:white;
+}
+.mail-content {
+	flex-grow: 1;
+	margin-left: 8px;
+}
+.tarih {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+    font-size:11px;
+}
+.date {
+	align-self:center;
+	text-align:right;
+}
+.from {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	margin-top:-4px;
+	font-weight:bold;
+}
+.subject {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:wrap;
+    max-height:28px;
+    font-size:11px;
+}
+.buttons {
+	margin-right:-6px;
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:flex-end;
+}
+
+.btn {
+	width:18px;
+	height:18px;
+	min-width:18px;
+	object-fit:contain;
+	opacity:0;
+}
+
+.root:hover .btn { opacity: 0.5; }
+.root .btn:hover { opacity: 1; }
+
+.btn-flag { opacity:<FlagDefaultOpacity>; }
+.root:hover .btn-flag { opacity: <FlagHoverOpacity>; }
+.root .btn-flag:hover { opacity: 1; }
+
+.opaque { opacity:1; }
+.root:hover .opaque { opacity: 1; }
+.root .opaque:hover { opacity: 1; }";
+        }
         public static void SetSvgImage(this ImageOptions io, string resim, int w = 0, int h = 0)
         {
             string dosyaYolu = Path.Combine(KlasorYolu, resim + ".svg");
@@ -94,6 +202,15 @@ namespace RaviMalzeme
                     break;
                 case FORMTIP.STOK:
                     resim = "stok";
+                    break;
+                case FORMTIP.STOKLISTE:
+                    resim = "stokliste";
+                    break;
+                case FORMTIP.CARI:
+                    resim = "cari";
+                    break;
+                case FORMTIP.CARILISTE:
+                    resim = "cariliste";
                     break;
                 default:
                     break;

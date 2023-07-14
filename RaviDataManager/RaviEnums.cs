@@ -77,6 +77,41 @@ namespace RaviDataManager
         FIRMA = 3,
         KULLANICI = 4,
         TAKVIM = 5,
-        STOK = 6
+        STOKLISTE = 6,
+        STOK = 7,
+        CARI = 8,
+        CARILISTE = 9,
+        RAVILOGO = 10,
+        TANIM = 11,
+    }
+    public enum GRIDFTIP
+    {
+        NONE = 0,
+        STOK = 3,
+        CARI = 5,
+        TANIM = 6,
+        SATICI = 7
+    }
+    public enum GRIDEKEY
+    {
+        NONE = 0,
+        LISTE = 31
+    }
+    public enum USTMENUBUTTONTIP
+    {
+        NONE = 0,
+        KAPAT = 1,
+        SEC = 2,
+        BUGUN = 3,
+        GUNLUK3 = 4,
+        MAILGONDER = 5,
+        SMSGONDER = 6,
+        LISTE = 7,
+        LGETIR = 8,
+        LGOSTER = 9,
+        LRAPORSEC = 10,
+        LSIRALAMA = 11,
+        LEXCEL = 12,
+        LTASARLA = 13
     }
 }

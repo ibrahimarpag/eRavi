@@ -163,7 +163,7 @@ namespace RaviMalzeme.Manager
             UstMenuAdd(new CustomBarButtonItem(), "YEDEKLE", "yedekle", RAVIUSTMENU.YEDEKLE);
             UstMenuAdd(new CustomBarButtonItem(), "HAKKINDA", "hakkinda", RAVIUSTMENU.HAKKINDA);
             UstMenuAdd(new CustomBarButtonItem(), "FİRMA", "firma", RAVIUSTMENU.FIRMA);
-            UstMenuAdd(new CustomBarButtonItem(), "KAPAT", "close", RAVIUSTMENU.KAPAT);
+            UstMenuAdd(new CustomBarButtonItem(), "KAPAT", "okapat", RAVIUSTMENU.KAPAT);
         }
         private void UstMenuAdd(CustomBarButtonItem btn, string text, string resim, RAVIUSTMENU UstMenuTip, int w = 16, int h = 16)
         {

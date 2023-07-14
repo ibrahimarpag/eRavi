@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForms\BaseListeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\BasePropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CustomBarButtonItem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -78,8 +84,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\GridManager.cs" />
+    <Compile Include="Manager\RaviBildirim.cs" />
     <Compile Include="Manager\RaviDesktop.cs" />
     <Compile Include="Manager\RaviMenu.cs" />
+    <Compile Include="Manager\RaviMesaj.cs" />
     <Compile Include="Manager\TopStackPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,5 +133,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
