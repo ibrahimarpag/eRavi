@@ -41,6 +41,7 @@ namespace eRavi.Formlar
             this.sirket = sirket;
             InitializeComponent();
             this.IconOptions.SetImage("raviikon.png");
+            pictureEdit2.Image = pictureEdit2.Image.SetImage("raviikon.png");
             this.Text = "Petek Ravi ® Ticari Tam Entegre Yazılım Sistemi - Versiyon 2024.04.04.1356, Script No: 1341";
             //lblUygulamaAdi.ItemAppearance.Normal.Font = new Font("Tahoma", 10F);
             //lblUygulamaAdi.Caption = "Petek Ravi® Ticari Tam Entegre Yazılım Sistemi - Versiyon 2024.04.04.1356, Script No: 1341";

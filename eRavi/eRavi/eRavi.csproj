@@ -209,5 +209,8 @@
   <ItemGroup>
     <None Include="Resources\ravilogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resimler\raviikon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,6 +63,16 @@ namespace eRavi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap raviikon {
+            get {
+                object obj = ResourceManager.GetObject("raviikon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ravilogo {
             get {
                 object obj = ResourceManager.GetObject("ravilogo", resourceCulture);

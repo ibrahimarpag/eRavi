@@ -51,6 +51,7 @@
             this.btnTema = new DevExpress.XtraBars.BarButtonItem();
             this.btnAcikForm = new DevExpress.XtraBars.BarButtonItem();
             this.panelSolMenu = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabContent)).BeginInit();
             this.tabContent.SuspendLayout();
             this.tabDesktop.SuspendLayout();
@@ -69,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelSolMenu)).BeginInit();
             this.panelSolMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContent
@@ -332,11 +334,27 @@
             this.panelSolMenu.TabIndex = 12;
             this.panelSolMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
+            // pictureEdit2
+            // 
+            this.pictureEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEdit2.Location = new System.Drawing.Point(945, 43);
+            this.pictureEdit2.MenuManager = this.rbMenu;
+            this.pictureEdit2.Name = "pictureEdit2";
+            this.pictureEdit2.Properties.AllowFocused = false;
+            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit2.Size = new System.Drawing.Size(72, 56);
+            this.pictureEdit2.TabIndex = 15;
+            // 
             // FrmAnaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 826);
+            this.Controls.Add(this.pictureEdit2);
             this.Controls.Add(this.panelTrash);
             this.Controls.Add(this.tabContent);
             this.Controls.Add(this.panelSolMenu);
@@ -366,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelSolMenu)).EndInit();
             this.panelSolMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +413,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAcikForm;
         private DevExpress.XtraEditors.PanelControl panelSolMenu;
         private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
     }
 }
