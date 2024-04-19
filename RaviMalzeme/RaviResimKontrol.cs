@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace RaviMalzeme
 {
@@ -23,9 +24,9 @@ namespace RaviMalzeme
 <div class=""root"" id=""root"">
 	<div class=""content"">
 		<div class=""mail-content"">
-			<div class=""from"" id=""from"">${baslik}</div>
-			<div class=""subject"" id=""subject"">${kisa_aciklama}</div>
-			<div class=""tarih"">${tarih}</div>
+			<div class=""from"" id=""from"">${aciklama}</div>
+			<div class=""subject"" id=""subject"">${HtmlContent}</div>
+			<div class=""tarih"">${eklemeTarihi}</div>
 		</div>
 	</div>
 </div>";
@@ -34,7 +35,7 @@ namespace RaviMalzeme
         {
             return @"
 .root {
-	height: 84px;
+	height: auto;
 	font-family: ""Segoe UI"";
 	font-size: 14px;
 	background-color: @Window;
@@ -187,6 +188,9 @@ namespace RaviMalzeme
                     break;
                 case FORMTIP.SMS:
                     resim = "sms";
+                    break;
+                case FORMTIP.GIRIS:
+                    resim = "raviikon";
                     break;
                 case FORMTIP.MAIL:
                     resim = "mail";

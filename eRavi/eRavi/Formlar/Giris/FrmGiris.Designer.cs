@@ -46,6 +46,7 @@
             this.btnDestek = new DevExpress.XtraEditors.SimpleButton();
             this.stackPanel2 = new DevExpress.Utils.Layout.StackPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageKullanici.Properties)).BeginInit();
@@ -64,6 +65,7 @@
             this.stackPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPetekUrl
@@ -74,9 +76,9 @@
             this.lblPetekUrl.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPetekUrl.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblPetekUrl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblPetekUrl.Location = new System.Drawing.Point(2, 326);
+            this.lblPetekUrl.Location = new System.Drawing.Point(2, 346);
             this.lblPetekUrl.Name = "lblPetekUrl";
-            this.lblPetekUrl.Size = new System.Drawing.Size(319, 14);
+            this.lblPetekUrl.Size = new System.Drawing.Size(319, 20);
             this.lblPetekUrl.TabIndex = 999;
             this.lblPetekUrl.Text = "www.petekyazilim.com.tr";
             // 
@@ -85,7 +87,7 @@
             this.btnDil.AllowFocus = false;
             this.btnDil.Location = new System.Drawing.Point(0, 0);
             this.btnDil.Name = "btnDil";
-            this.btnDil.Size = new System.Drawing.Size(60, 65);
+            this.btnDil.Size = new System.Drawing.Size(60, 70);
             this.btnDil.TabIndex = 999;
             this.btnDil.TabStop = false;
             // 
@@ -98,7 +100,7 @@
             this.panelControl2.Controls.Add(this.txtKullanici);
             this.panelControl2.Location = new System.Drawing.Point(5, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(270, 40);
+            this.panelControl2.Size = new System.Drawing.Size(270, 43);
             this.panelControl2.TabIndex = 0;
             // 
             // imageKullanici
@@ -110,7 +112,7 @@
             this.imageKullanici.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imageKullanici.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.imageKullanici.Properties.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.imageKullanici.Size = new System.Drawing.Size(39, 40);
+            this.imageKullanici.Size = new System.Drawing.Size(39, 43);
             this.imageKullanici.TabIndex = 999;
             // 
             // txtKullanici
@@ -121,15 +123,18 @@
             this.txtKullanici.Properties.AutoHeight = false;
             this.txtKullanici.Properties.NullText = "Kullanıcı Kodu";
             this.txtKullanici.Properties.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.txtKullanici.Size = new System.Drawing.Size(270, 40);
+            this.txtKullanici.Size = new System.Drawing.Size(270, 43);
             this.txtKullanici.TabIndex = 1;
             // 
             // btnVazgec
             // 
             this.btnVazgec.AllowFocus = false;
+            this.btnVazgec.Appearance.Font = new System.Drawing.Font("Nina", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnVazgec.Appearance.Options.UseFont = true;
+            this.btnVazgec.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnVazgec.Location = new System.Drawing.Point(210, 0);
             this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(60, 65);
+            this.btnVazgec.Size = new System.Drawing.Size(60, 70);
             this.btnVazgec.TabIndex = 999;
             this.btnVazgec.TabStop = false;
             // 
@@ -138,7 +143,7 @@
             this.btnKlavye.AllowFocus = false;
             this.btnKlavye.Location = new System.Drawing.Point(140, 0);
             this.btnKlavye.Name = "btnKlavye";
-            this.btnKlavye.Size = new System.Drawing.Size(60, 65);
+            this.btnKlavye.Size = new System.Drawing.Size(60, 70);
             this.btnKlavye.TabIndex = 999;
             this.btnKlavye.TabStop = false;
             // 
@@ -149,9 +154,9 @@
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl3.Controls.Add(this.imageSifre);
             this.panelControl3.Controls.Add(this.txtSifre);
-            this.panelControl3.Location = new System.Drawing.Point(5, 49);
+            this.panelControl3.Location = new System.Drawing.Point(5, 52);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(270, 40);
+            this.panelControl3.Size = new System.Drawing.Size(270, 43);
             this.panelControl3.TabIndex = 2;
             // 
             // imageSifre
@@ -163,7 +168,7 @@
             this.imageSifre.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imageSifre.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.imageSifre.Properties.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.imageSifre.Size = new System.Drawing.Size(39, 40);
+            this.imageSifre.Size = new System.Drawing.Size(39, 43);
             this.imageSifre.TabIndex = 999;
             // 
             // txtSifre
@@ -174,7 +179,7 @@
             this.txtSifre.Properties.AutoHeight = false;
             this.txtSifre.Properties.NullText = "Şifre";
             this.txtSifre.Properties.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.txtSifre.Size = new System.Drawing.Size(270, 40);
+            this.txtSifre.Size = new System.Drawing.Size(270, 43);
             this.txtSifre.TabIndex = 3;
             // 
             // imageFirma
@@ -186,7 +191,7 @@
             this.imageFirma.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.imageFirma.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.imageFirma.Properties.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.imageFirma.Size = new System.Drawing.Size(39, 40);
+            this.imageFirma.Size = new System.Drawing.Size(39, 43);
             this.imageFirma.TabIndex = 999;
             // 
             // txtFirma
@@ -197,7 +202,7 @@
             this.txtFirma.Properties.AutoHeight = false;
             this.txtFirma.Properties.NullText = "Firma Kodu";
             this.txtFirma.Properties.Padding = new System.Windows.Forms.Padding(42, 0, 0, 0);
-            this.txtFirma.Size = new System.Drawing.Size(270, 40);
+            this.txtFirma.Size = new System.Drawing.Size(270, 43);
             this.txtFirma.TabIndex = 5;
             // 
             // panelControl4
@@ -207,18 +212,20 @@
             this.panelControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl4.Controls.Add(this.imageFirma);
             this.panelControl4.Controls.Add(this.txtFirma);
-            this.panelControl4.Location = new System.Drawing.Point(5, 95);
+            this.panelControl4.Location = new System.Drawing.Point(5, 101);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(270, 40);
+            this.panelControl4.Size = new System.Drawing.Size(270, 43);
             this.panelControl4.TabIndex = 4;
             // 
             // btnGiris
             // 
             this.btnGiris.AllowFocus = false;
-            this.btnGiris.Location = new System.Drawing.Point(5, 149);
-            this.btnGiris.Margin = new System.Windows.Forms.Padding(3, 11, 3, 16);
+            this.btnGiris.Appearance.Font = new System.Drawing.Font("Nina", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.Appearance.Options.UseFont = true;
+            this.btnGiris.Location = new System.Drawing.Point(5, 159);
+            this.btnGiris.Margin = new System.Windows.Forms.Padding(3, 12, 3, 17);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(270, 40);
+            this.btnGiris.Size = new System.Drawing.Size(270, 43);
             this.btnGiris.TabIndex = 0;
             this.btnGiris.TabStop = false;
             this.btnGiris.Text = "GİRİŞ YAP";
@@ -230,9 +237,9 @@
             this.panelControl5.Controls.Add(this.btnKlavye);
             this.panelControl5.Controls.Add(this.btnDil);
             this.panelControl5.Controls.Add(this.btnDestek);
-            this.panelControl5.Location = new System.Drawing.Point(5, 208);
+            this.panelControl5.Location = new System.Drawing.Point(5, 222);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(270, 65);
+            this.panelControl5.Size = new System.Drawing.Size(270, 70);
             this.panelControl5.TabIndex = 10000;
             // 
             // btnDestek
@@ -240,7 +247,7 @@
             this.btnDestek.AllowFocus = false;
             this.btnDestek.Location = new System.Drawing.Point(70, 0);
             this.btnDestek.Name = "btnDestek";
-            this.btnDestek.Size = new System.Drawing.Size(60, 65);
+            this.btnDestek.Size = new System.Drawing.Size(60, 70);
             this.btnDestek.TabIndex = 999;
             this.btnDestek.TabStop = false;
             // 
@@ -252,29 +259,38 @@
             this.stackPanel2.Controls.Add(this.btnGiris);
             this.stackPanel2.Controls.Add(this.panelControl5);
             this.stackPanel2.LayoutDirection = DevExpress.Utils.Layout.StackPanelLayoutDirection.TopDown;
-            this.stackPanel2.Location = new System.Drawing.Point(21, 23);
+            this.stackPanel2.Location = new System.Drawing.Point(21, 25);
             this.stackPanel2.Name = "stackPanel2";
-            this.stackPanel2.Size = new System.Drawing.Size(280, 278);
+            this.stackPanel2.Size = new System.Drawing.Size(280, 299);
             this.stackPanel2.TabIndex = 9999;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.separatorControl1);
             this.panelControl1.Controls.Add(this.stackPanel2);
             this.panelControl1.Controls.Add(this.lblPetekUrl);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(323, 342);
+            this.panelControl1.Size = new System.Drawing.Size(323, 368);
             this.panelControl1.TabIndex = 1000000;
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.Location = new System.Drawing.Point(5, 330);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Size = new System.Drawing.Size(313, 23);
+            this.separatorControl1.TabIndex = 10000;
             // 
             // FrmGiris
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 342);
+            this.ClientSize = new System.Drawing.Size(323, 368);
             this.Controls.Add(this.panelControl1);
+            this.IconOptions.ShowIcon = false;
             this.Name = "FrmGiris";
-            this.Text = "FrmGiris";
+            this.Text = "Ravi Giriş - Ver.2024.04.04.1356";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageKullanici.Properties)).EndInit();
@@ -293,6 +309,7 @@
             this.stackPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,5 +334,6 @@
         private DevExpress.XtraEditors.SimpleButton btnDestek;
         private DevExpress.Utils.Layout.StackPanel stackPanel2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SeparatorControl separatorControl1;
     }
 }
