@@ -83,6 +83,7 @@ namespace RaviDataManager
         CARILISTE = 9,
         RAVILOGO = 10,
         TANIM = 11,
+        GIRIS = 12,
     }
     public enum GRIDFTIP
     {

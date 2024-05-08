@@ -33,11 +33,12 @@ namespace eRavi.Formlar.Giris
             this.sirket = sirket;
             InitializeComponent();
 
-            this.Text = "Ravi Giriş";
+            this.Text = "Ravi Giriş - Ver.2024.04.04.1356";
             txtKullanici.Text = this.sirket.IniReadValue("login", "Kullanici");
             txtFirma.Text = this.sirket.IniReadValue("login", "Firma");
-
             SetControlDefault();
+            this.IconOptions.SetImage("raviikon.png");
+            this.IconOptions.ShowIcon = true;
             LoadEvent();
         }
         private void LoadEvent()
@@ -102,20 +103,28 @@ namespace eRavi.Formlar.Giris
         {
             this.MaximizeBox = false;
 
-            btnDestek.ImageOptions.Location = ImageLocation.MiddleCenter;
-            btnKlavye.ImageOptions.Location = ImageLocation.MiddleCenter;
-            btnVazgec.ImageOptions.Location = ImageLocation.MiddleCenter;
-            btnDil.ImageOptions.Location = ImageLocation.MiddleCenter;
-
+            btnDestek.ImageOptions.Location = ImageLocation.TopCenter;
+            btnDestek.Font = new Font("Nina", 9F, System.Drawing.FontStyle.Bold);
+            btnDestek.Text = "DESTEK";
+            btnKlavye.ImageOptions.Location = ImageLocation.TopCenter;
+            btnKlavye.Font = new Font("Nina", 9F, System.Drawing.FontStyle.Bold);
+            btnKlavye.Text = "KLAVYE";
+            btnVazgec.ImageOptions.Location = ImageLocation.TopCenter;
+            btnVazgec.Font = new Font("Nina", 9F, System.Drawing.FontStyle.Bold);
+            btnVazgec.Text = "VAZGEÇ";
+            btnDil.ImageOptions.Location = ImageLocation.TopCenter;
+            btnDil.Padding = new Padding(0, 5, 0, 5);
+            btnDil.Font = new Font("Nina", 9F, System.Drawing.FontStyle.Bold);
+            btnDil.Text = "DİL";
             btnDestek.AllowFocus = false;
             btnKlavye.AllowFocus = false;
             btnVazgec.AllowFocus = false;
             btnDil.AllowFocus = false;
 
-            btnDil.ImageOptions.SetSvgImage("turkiye", 48, 48);
-            btnDestek.ImageOptions.SetSvgImage("destek", 48, 48);
-            btnKlavye.ImageOptions.SetSvgImage("klavye", 48, 48);
-            btnVazgec.ImageOptions.SetSvgImage("xkapat", 48, 48);
+            btnDil.ImageOptions.SetSvgImage("turkiye", 36, 36);
+            btnDestek.ImageOptions.SetSvgImage("destek", 36, 36);
+            btnKlavye.ImageOptions.SetSvgImage("klavye", 36, 36);
+            btnVazgec.ImageOptions.SetSvgImage("xkapat", 36, 36);
             this.IconOptions.SetImage("logo.png");
             imageKullanici.SetSvgImage("kullanici", 20, 20);
             imageSifre.SetSvgImage("kilit", 24, 24);

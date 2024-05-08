@@ -33,17 +33,23 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(295, 94);
+            this.simpleButton1.Appearance.Options.UseTextOptions = true;
+            this.simpleButton1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.BottomLeft;
+            this.simpleButton1.ImageOptions.SvgImage = global::eRavi.Properties.Resources.turkiye;
+            this.simpleButton1.ImageOptions.SvgImageSize = new System.Drawing.Size(36, 36);
+            this.simpleButton1.Location = new System.Drawing.Point(295, 101);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(121, 109);
+            this.simpleButton1.Size = new System.Drawing.Size(121, 117);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "simpleButton1";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.simpleButton1);
             this.Name = "Form1";
             this.Text = "Form1";

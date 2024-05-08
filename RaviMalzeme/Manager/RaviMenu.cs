@@ -154,7 +154,7 @@ namespace RaviMalzeme.Manager
             ustMenu.ItemLinks.Clear();
             UstMenuAdd(new CustomBarButtonItem(), "SMS", "sms", RAVIUSTMENU.SMS);
             UstMenuAdd(new CustomBarButtonItem(), "MAİL", "mail", RAVIUSTMENU.MAIL);
-            UstMenuAdd(new CustomBarButtonItem(), "DESTEK", "destek", RAVIUSTMENU.DESTEK);
+            UstMenuAdd(new CustomBarButtonItem(), "DESTEK", "destek1", RAVIUSTMENU.DESTEK);
             UstMenuAdd(new CustomBarButtonItem(), "TAKVİM", "takvim", RAVIUSTMENU.TAKVIM);
             UstMenuAdd(new CustomBarButtonItem(), "HESAPLA", "hesapla", RAVIUSTMENU.HESAP);
             UstMenuAdd(new CustomBarButtonItem(), "KISAYOL", "kisayol", RAVIUSTMENU.MASAUSTU);
@@ -196,7 +196,10 @@ namespace RaviMalzeme.Manager
                     if (item["seviye"].ToString() == "0" && item["goster"].ToString() == "1")
                     {
                         var tr = GetTreeNode(dt.Select("seviye<>0"), item);
-                        tr.Appearance.Default.Font = new System.Drawing.Font("Nina", 11F);
+                        tr.Appearance.Default.Font = new System.Drawing.Font("Nina", 11F, FontStyle.Bold);
+                        tr.Appearance.Hovered.Font = new System.Drawing.Font("Nina", 11F, FontStyle.Bold);
+                        tr.Appearance.Hovered.ForeColor = Color.White;
+                        tr.Appearance.Pressed.ForeColor = Color.White;
                         this.solMenu.Elements.Add(tr);
                     }
                 }
@@ -206,19 +209,26 @@ namespace RaviMalzeme.Manager
         {
             var accordionControlElement = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             accordionControlElement.Tag = dr;
+            accordionControlElement.Appearance.Normal.ForeColor = Color.White;
             accordionControlElement.Expanded = false;
             accordionControlElement.Text = dr["adi"].ToString();
+            
             var altMenu = dt.ToList().Where<DataRow>(x => x["mno_ana"].ToString() == dr["mno"].ToString()).ToArray();
             if (altMenu.Length > 0)
             {
+                accordionControlElement.Appearance.Default.Font = new System.Drawing.Font("Nina", 10F, FontStyle.Bold);
                 foreach (DataRow item in altMenu)
                 {
                     var tr = GetTreeNode(dt, item);
+                    
                     accordionControlElement.Elements.Add(tr);
                 }
             }
             else if (dr["seviye"].ToString() != "0")
+            {
                 accordionControlElement.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+                accordionControlElement.Appearance.Default.Font = new System.Drawing.Font("Nina", 10F, FontStyle.Regular);
+            }
             return accordionControlElement;
         }
         #endregion

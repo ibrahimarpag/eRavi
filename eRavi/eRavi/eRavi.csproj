@@ -203,6 +203,14 @@
       <Name>RaviMalzeme</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\turkiye.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ravilogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resimler\raviikon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

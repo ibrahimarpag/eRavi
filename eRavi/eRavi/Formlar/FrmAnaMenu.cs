@@ -40,7 +40,12 @@ namespace eRavi.Formlar
         {
             this.sirket = sirket;
             InitializeComponent();
-            this.IconOptions.SetImage("logo.png");
+            this.IconOptions.SetImage("raviikon.png");
+            pictureEdit2.Image = pictureEdit2.Image.SetImage("raviikon.png");
+            this.Text = "Petek Ravi ® Ticari Tam Entegre Yazılım Sistemi - Versiyon 2024.04.04.1356, Script No: 1341";
+            //lblUygulamaAdi.ItemAppearance.Normal.Font = new Font("Tahoma", 10F);
+            //lblUygulamaAdi.Caption = "Petek Ravi® Ticari Tam Entegre Yazılım Sistemi - Versiyon 2024.04.04.1356, Script No: 1341";
+
             pictureEdit1.Image = pictureEdit1.Image.SetImage("xsil.png");
             raviMenu = new RaviMenu(this.sirket, this.solMenu, this.ribbonPageGroup1, this.footerMenu, lookOpenForms);
             raviMenu.LoadUstMenu();
@@ -78,7 +83,7 @@ namespace eRavi.Formlar
                 //bildirimGroup.Visible = true;
             };
             #region Tema
-            TemaDegistir("Ravi Turuncu Aydınlık Mod");
+            TemaDegistir("Ravi Mavi Tema");
             lookTema.Properties.DataSource = new object[] {
                 new { Caption = "Aydınlık Mod" },
                 new { Caption = "Karanlık Mod" },
@@ -103,8 +108,8 @@ namespace eRavi.Formlar
                 }
             };
             #endregion
-            panelDesktop.Paint += panelDesktop_Paint;
         }
+
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
@@ -270,6 +275,11 @@ namespace eRavi.Formlar
                 this.LookAndFeel.SetSkinStyle(UserLookAndFeel.Default.SkinName, "Tampon Tema");
                 solMenu.ViewType = AccordionControlViewType.Standard;
             }
+            else if (s == "Ravi Mavi Tema")
+            {
+                this.LookAndFeel.SetSkinStyle(UserLookAndFeel.Default.SkinName, "Ravi Mavi Tema");
+                solMenu.ViewType = AccordionControlViewType.HamburgerMenu;
+            }
             else
             {
                 this.LookAndFeel.SetSkinStyle(UserLookAndFeel.Default.SkinName, "Tampon Tema");
@@ -278,20 +288,17 @@ namespace eRavi.Formlar
             Application.DoEvents();
             this.LookAndFeel.SetSkinStyle(UserLookAndFeel.Default.SkinName, s);
         }
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
-        {
-            var rect = ImageLayoutHelper.GetImageBounds(panelDesktop.ClientRectangle, new Size(400, 120), DevExpress.Utils.Drawing.ImageLayoutMode.MiddleCenter);
-            if (this.LookAndFeel.ActiveSvgPaletteName.Contains("Karanlık")) e.Graphics.DrawImage("baslikopakbeyaz.png".GetImage(), rect);
-            else e.Graphics.DrawImage("petekyazilim.png".GetImage(), rect);
-
-        }
-
         private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
         {
 
         }
 
         private void rbMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
         {
 
         }

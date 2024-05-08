@@ -19,6 +19,7 @@ namespace eRavi
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmAnaMenu(new PetekKernel.Sirket(BaglanY.Aktar)));
+            //Application.Run(new RaviMalzeme.Form1());
         }
     }
 }
