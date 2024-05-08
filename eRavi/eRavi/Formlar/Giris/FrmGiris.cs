@@ -112,7 +112,7 @@ namespace eRavi.Formlar.Giris
             btnVazgec.AllowFocus = false;
             btnDil.AllowFocus = false;
 
-            btnDil.ImageOptions.SetImageFile("Turkiye.png");
+            btnDil.ImageOptions.SetSvgImage("turkiye", 48, 48);
             btnDestek.ImageOptions.SetSvgImage("destek", 48, 48);
             btnKlavye.ImageOptions.SetSvgImage("klavye", 48, 48);
             btnVazgec.ImageOptions.SetSvgImage("xkapat", 48, 48);
