@@ -11,6 +11,7 @@ namespace RaviMalzeme.BaseForms
 {
     public class BaseListeForm<T> : BasePropertyForm
     {
+
         public event EventHandler<T> SelectRow = delegate { };
         public event EventHandler<List<T>> SelectRows = delegate { };
         public BaseListeForm()
@@ -27,6 +28,18 @@ namespace RaviMalzeme.BaseForms
         public void PerformSelectRows(object sender, List<T> row)
         {
             SelectRows.Invoke(sender, row);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // BaseListeForm
+            // 
+            this.ClientSize = new System.Drawing.Size(298, 268);
+            this.Name = "BaseListeForm";
+            this.ResumeLayout(false);
+
         }
     }
 }

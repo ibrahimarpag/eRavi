@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using RaviDataManager.Manager;
 using RaviMalzeme;
 using RaviMalzeme.Manager;
+using Ravi.Manager;
+using System.IO;
 
 namespace eRavi.Formlar.Giris
 {
@@ -34,8 +36,8 @@ namespace eRavi.Formlar.Giris
             InitializeComponent();
 
             this.Text = "Ravi Giriş - Ver.2024.04.04.1356";
-            txtKullanici.Text = this.sirket.IniReadValue("login", "Kullanici");
-            txtFirma.Text = this.sirket.IniReadValue("login", "Firma");
+            txtKullanici.Text = ReadIni.IniReadValue("login", "Kullanici");
+            txtFirma.Text = ReadIni.IniReadValue("login", "Firma");
             SetControlDefault();
             this.IconOptions.SetImage("raviikon.png");
             this.IconOptions.ShowIcon = true;
@@ -158,8 +160,10 @@ namespace eRavi.Formlar.Giris
                 this.sirket.Baglan();
                 new P(this.sirket).Getir(kullaniciRw.Kodu);
                 Completed.Invoke(this, kullaniciRw);
-                this.sirket.IniWriteValue("login", "Kullanici", txtKullanici.Text);
-                this.sirket.IniWriteValue("login", "Firma", txtFirma.Text);
+                ReadIni.IniWriteValue("login", "Kullanici", txtKullanici.Text);
+                ReadIni.IniWriteValue("login", "Firma", txtFirma.Text);
+                //this.sirket.IniWriteValue("login", "Kullanici", txtKullanici.Text);
+                //this.sirket.IniWriteValue("login", "Firma", txtFirma.Text);
             }
             else
             {

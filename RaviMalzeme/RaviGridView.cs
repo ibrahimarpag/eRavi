@@ -49,7 +49,7 @@ namespace RaviMalzeme
                 }, tokenSource.Token);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -82,6 +82,7 @@ namespace RaviMalzeme
             //{
 
             //}
+            await Task.CompletedTask;
         }
     }
 }

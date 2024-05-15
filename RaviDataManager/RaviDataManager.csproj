@@ -59,19 +59,23 @@
     <Compile Include="Manager\ManagerSistem.cs" />
     <Compile Include="Manager\ManagerTakvim.cs" />
     <Compile Include="Manager\OffsetManager.cs" />
-    <Compile Include="Manager\RaviIni.cs" />
+    <Compile Include="Manager\Ozel\ManagerLogoTicimaxSiparis.cs" />
     <Compile Include="Models\IMenuRw.cs" />
     <Compile Include="Models\IRFirmaTb.cs" />
     <Compile Include="Models\IRGenelTb.cs" />
     <Compile Include="Models\IRGridSet.cs" />
     <Compile Include="Models\IRKullaniciTb.cs" />
     <Compile Include="Models\IRTakvimTb.cs" />
+    <Compile Include="Manager\Ozel\Class1.cs" />
+    <Compile Include="Models\Ozel\LogoTicimaxSiparis.cs" />
+    <Compile Include="Models\Ozel\LogoTicimaxSiparisUrun.cs" />
     <Compile Include="Models\RaviList.cs" />
     <Compile Include="Models\RaviResult.cs" />
     <Compile Include="Models\VIRCariTb.cs" />
     <Compile Include="Models\VIRStokTb.cs" />
     <Compile Include="RaviEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadIni.cs" />
     <Compile Include="TempTable.cs" />
   </ItemGroup>
   <ItemGroup>

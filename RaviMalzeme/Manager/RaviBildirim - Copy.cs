@@ -75,10 +75,10 @@ namespace RaviMalzeme.Manager
                 SetLocation(f);
                 await RefreshData();
             }
-            else
-            {
-                FrmBildirim.Show(f);
-            }
+            //else
+            //{
+            //    FrmBildirim.Show(f);
+            //}
         }
         private static async Task RefreshData()
         {

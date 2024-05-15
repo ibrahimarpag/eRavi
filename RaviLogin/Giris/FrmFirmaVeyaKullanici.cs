@@ -39,7 +39,7 @@ namespace eRavi.Formlar.Giris
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            ManagerSistem manager = new ManagerSistem(this.sirket);
+            ManagerSistem manager = new ManagerSistem();
             if (liste == "firma")
             {
                 this.SetFormIcon(FORMTIP.FIRMA, "FİRMA SEÇİM EKRANI");
