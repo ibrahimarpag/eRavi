@@ -17,7 +17,12 @@ namespace RaviTicimaxLogo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            ProjectSettings.Yazilim = EYazilim.beyazel;
             Application.Run(new FrmAnaMenu(new PetekKernel.Sirket(BaglanY.Aktar)));
         }
+    }
+    public static class ProjectSettings
+    {
+        public static EYazilim Yazilim { get; set; }
     }
 }

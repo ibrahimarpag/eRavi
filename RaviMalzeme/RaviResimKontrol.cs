@@ -168,7 +168,11 @@ namespace RaviMalzeme
             string dosyaYolu = Path.Combine(KlasorYolu, resim + ".svg");
             if (File.Exists(dosyaYolu))
             {
-                if (SvgImage.FromFile(dosyaYolu) is SvgImage svgImage) io.SvgImage = svgImage;
+                if (SvgImage.FromFile(dosyaYolu) is SvgImage svgImage)
+                {
+                    io.SvgImage = svgImage;
+                    if (w != 0 && h != 0) io.SvgImageSize = new Size(w, h);
+                }
             }
         }
         public static void SetImageFile(this ImageOptions io, string resimYol)

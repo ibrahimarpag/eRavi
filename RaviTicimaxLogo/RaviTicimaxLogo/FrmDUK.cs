@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using Ravi.Manager;
-using Ravi.Models.Ozel.Entegrasyon;
+using RaviDataManager.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,34 +17,46 @@ namespace RaviTicimaxLogo
     //Dökülen Ürünlerin Kontrolü
     public partial class FrmDUK : XtraForm
     {
-        List<LogoTicimaxSiparis> Data {  get; set; }
-        List<LogoTicimaxSiparisUrun> UrunListe {  get; set; }
-        List<LogoTicimaxSiparisUrun> OkutulanUrunListe {  get; set; }
-        public FrmDUK(List<LogoTicimaxSiparis> Data)
+        List<VIRSiparisFis> Data {  get; set; }
+        List<VIRSiparisFisDetay> UrunListe {  get; set; }
+        List<VIRSiparisFisDetay> OkutulanUrunListe {  get; set; }
+        public FrmDUK(List<VIRSiparisFis> Data)
         {
             this.Data = Data;
-            UrunListe = new List<LogoTicimaxSiparisUrun>();
-            OkutulanUrunListe = new List<LogoTicimaxSiparisUrun>();
+            UrunListe = new List<VIRSiparisFisDetay>();
+            OkutulanUrunListe = new List<VIRSiparisFisDetay>();
             InitializeComponent();
+            timerBarkod.Tick += (s, e) =>
+            {
+                if (!gridControl1.IsFocused && barkodOdaklama.Checked) txtBarkod.Focus();
+            };
             gridControl2.DataSource = OkutulanUrunListe;
             gridView1.RowCellStyle += gridView1_RowCellStyle;
+            secenekCikar.CheckedChanged += (s, e) => txtBarkod.Focus();
             this.ShowInTaskbar = false;
             txtBarkod.Text = "Y06.01.01.086";
             txtBarkod.KeyUp += (s, e) =>
             {
-                if (e.KeyCode == Keys.Enter)
+                if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtBarkod.Text))
                 {
                     //8694432904078
-                    if (this.UrunListe.FirstOrDefault(x => x.barkodu == txtBarkod.Text || x.stok_kodu == txtBarkod.Text) is LogoTicimaxSiparisUrun urun)
+                    if (this.UrunListe.FirstOrDefault(x => (x.barkodu == txtBarkod.Text && !string.IsNullOrEmpty(x.barkodu)) || x.stok_kodu == txtBarkod.Text) is VIRSiparisFisDetay urun)
                     {
                         var index = gridView1.FindRow(urun);
-                        if (OkutulanUrunListe.FirstOrDefault(x => x.barkodu == urun.barkodu ) is LogoTicimaxSiparisUrun ourun) 
+                        if (OkutulanUrunListe.FirstOrDefault(x => (x.barkodu == txtBarkod.Text && !string.IsNullOrEmpty(x.barkodu)) || x.stok_kodu == txtBarkod.Text) is VIRSiparisFisDetay ourun)
                         {
-                            ourun.sip_miktar++;
+                            if (secenekCikar.Checked)
+                            {
+                                ourun.sip_miktar--;
+                                if (ourun.sip_miktar == 0)
+                                    OkutulanUrunListe.Remove(ourun);
+                                secenekCikar.Checked = false;
+                            }
+                            else ourun.sip_miktar++;
                             gridControl2.RefreshDataSource();
                             gridView1.RefreshRow(index);
                         }
-                        else
+                        else if (!secenekCikar.Checked) 
                         {
                             ourun = urun.Copy();
                             ourun.sip_miktar = 1;
@@ -52,19 +64,22 @@ namespace RaviTicimaxLogo
                             gridControl2.RefreshDataSource();
                             gridView1.RefreshRow(index);
                         }
+                        else if (secenekCikar.Checked) XtraMessageBox.Show($"Çıkarmak İstediğiniz Ürün 'Okutulan Ürünler' Arasında Bulunamadı!");
                     }
                     else
                     {
                         XtraMessageBox.Show($"{txtBarkod.Text} Seçili Sipariş Listelerinde Bulunamadı!");
                     }
+                    txtBarkod.Text = string.Empty;
                 }
             };
         }
         private void gridView1_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             var view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
-            var su = view.GetRow(e.RowHandle) as LogoTicimaxSiparisUrun;
-            if (this.OkutulanUrunListe.FirstOrDefault(x => x.barkodu == su.barkodu) is LogoTicimaxSiparisUrun a)
+            var su = view.GetRow(e.RowHandle) as VIRSiparisFisDetay;
+            var k = string.IsNullOrEmpty(su.barkodu) ? su.stok_kodu : su.barkodu;
+            if (this.OkutulanUrunListe.FirstOrDefault(x => x.barkodu == k || x.stok_kodu == k) is VIRSiparisFisDetay a) 
             {
                 if (su.sip_miktar == a.sip_miktar) 
                 {
@@ -94,7 +109,7 @@ namespace RaviTicimaxLogo
             {
                 foreach (var urun in item.UrunListe)
                 {
-                    if (UrunListe.FirstOrDefault(x => x.stok_kodu == urun.stok_kodu) is LogoTicimaxSiparisUrun u) 
+                    if (UrunListe.FirstOrDefault(x => x.stok_kodu == urun.stok_kodu) is VIRSiparisFisDetay u) 
                     {
                         urun.sip_miktar += u.sip_miktar;
                         urun.btutar += u.btutar;

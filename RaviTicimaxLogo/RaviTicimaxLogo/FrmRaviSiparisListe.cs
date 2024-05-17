@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using Ravi.Manager;
+using RaviDataManager.Manager;
 using RaviDataManager.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace RaviTicimaxLogo
 {
-    public partial class FrmSiparisListe : XtraForm
+    public partial class FrmRaviSiparisListe : XtraForm
     {
         public IOverlaySplashScreenHandle FLoader { get; set; }
         public void Loader(bool s)
@@ -24,7 +25,7 @@ namespace RaviTicimaxLogo
             else
                 SplashScreenManager.CloseOverlayForm(FLoader);
         }
-        public FrmSiparisListe()
+        public FrmRaviSiparisListe()
         {
             InitializeComponent();
             this.ShowInTaskbar = false;
@@ -33,6 +34,10 @@ namespace RaviTicimaxLogo
             tarihIlk.Properties.MaxValue = DateTime.Today;
             tarihSon.Properties.MaxValue = DateTime.Today;
             btnTarihFiltrele.Click += (s, e) => LoadData();
+            siparisDurum.SelectedValueChanged += (s, e) =>
+            {
+                LoadData();
+            };
             btnKontrolEkrani.Click += (s, e) =>
             {
                 var SeciliRows = gridView1.GetSelectedRows();
@@ -43,6 +48,21 @@ namespace RaviTicimaxLogo
                 }
                 var frm = new FrmDUK(Sip);
                 frm.ShowDialog(this);
+            };
+            siparisDurumDegistir.Click += (s, e) =>
+            {
+                if (!string.IsNullOrEmpty(siparisDurumAlt.EditValue?.ToString())) 
+                {
+                    var SeciliRows = gridView1.GetSelectedRows();
+                    var Sip = new List<VIRSiparisFis>();
+                    foreach (var item in SeciliRows)
+                    {
+                        if (gridView1.GetRow(item) is VIRSiparisFis a) Sip.Add(a);
+                    }
+                    ManagerSiparis manager = new ManagerSiparis(1);
+                    manager.SiparisDurumDegistir(Sip, siparisDurumAlt.EditValue?.ToString());
+                    LoadData();
+                }
             };
             gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.RowSelect;
             gridView1.OptionsSelection.MultiSelect = true;
@@ -58,8 +78,8 @@ namespace RaviTicimaxLogo
             Loader(true);
             try
             {
-                ManagerLogoTicimaxSiparis manager = new ManagerLogoTicimaxSiparis(1);
-                var SiparisListe = manager.GetList(tarihIlk.DateTime, tarihSon.DateTime);
+                ManagerSiparis manager = new ManagerSiparis(1);
+                var SiparisListe = manager.GetList(tarihIlk.DateTime, tarihSon.DateTime, siparisDurum.EditValue.ToString());
                 gridControl1.DataSource = SiparisListe;
                 gridView2.ViewCaption = "Ürün Listesi";
             }

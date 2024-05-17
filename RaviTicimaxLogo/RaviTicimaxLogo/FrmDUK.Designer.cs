@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -38,6 +39,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.barkodOdaklama = new DevExpress.XtraEditors.CheckEdit();
             this.separatorControl6 = new DevExpress.XtraEditors.SeparatorControl();
             this.separatorControl4 = new DevExpress.XtraEditors.SeparatorControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -53,10 +55,12 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.secenekCikar = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtBarkod = new DevExpress.XtraEditors.TextEdit();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.timerBarkod = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -69,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barkodOdaklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl5)).BeginInit();
@@ -77,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.secenekCikar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +140,6 @@
             this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 30;
             // 
@@ -189,6 +194,7 @@
             this.panelControl2.Appearance.Options.UseBackColor = true;
             this.panelControl2.AutoSize = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.barkodOdaklama);
             this.panelControl2.Controls.Add(this.separatorControl6);
             this.panelControl2.Controls.Add(this.separatorControl4);
             this.panelControl2.Controls.Add(this.labelControl4);
@@ -202,6 +208,19 @@
             this.panelControl2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.panelControl2.Size = new System.Drawing.Size(514, 67);
             this.panelControl2.TabIndex = 3;
+            // 
+            // barkodOdaklama
+            // 
+            this.barkodOdaklama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.barkodOdaklama.Location = new System.Drawing.Point(300, 40);
+            this.barkodOdaklama.Name = "barkodOdaklama";
+            this.barkodOdaklama.Properties.AllowFocused = false;
+            this.barkodOdaklama.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.barkodOdaklama.Properties.Appearance.Options.UseFont = true;
+            this.barkodOdaklama.Properties.Caption = "Barkoda Otomatik Odaklan";
+            this.barkodOdaklama.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.barkodOdaklama.Size = new System.Drawing.Size(187, 20);
+            this.barkodOdaklama.TabIndex = 3;
             // 
             // separatorControl6
             // 
@@ -280,6 +299,7 @@
             // 
             // gridView2
             // 
+            this.gridView2.ActiveFilterEnabled = false;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn6,
             this.gridColumn7,
@@ -289,7 +309,10 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsFilter.AllowFilterEditor = false;
+            this.gridView2.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowHeight = 30;
             // 
@@ -298,6 +321,7 @@
             this.gridColumn6.Caption = "Stok Kodu";
             this.gridColumn6.FieldName = "stok_kodu";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowFocus = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
             this.gridColumn6.Width = 176;
@@ -307,6 +331,7 @@
             this.gridColumn7.Caption = "Açıklama";
             this.gridColumn7.FieldName = "aciklama";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowFocus = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
             this.gridColumn7.Width = 392;
@@ -316,6 +341,7 @@
             this.gridColumn8.Caption = "Miktar";
             this.gridColumn8.FieldName = "sip_miktar";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowFocus = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 2;
             this.gridColumn8.Width = 85;
@@ -325,6 +351,7 @@
             this.gridColumn9.Caption = "Fiyat";
             this.gridColumn9.FieldName = "bfiyat";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowFocus = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 3;
             this.gridColumn9.Width = 120;
@@ -334,6 +361,7 @@
             this.gridColumn10.Caption = "Tutar";
             this.gridColumn10.FieldName = "btutar";
             this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowFocus = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 4;
             this.gridColumn10.Width = 133;
@@ -341,6 +369,7 @@
             // panelControl1
             // 
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.secenekCikar);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.txtBarkod);
@@ -350,6 +379,20 @@
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.panelControl1.Size = new System.Drawing.Size(725, 50);
             this.panelControl1.TabIndex = 1;
+            // 
+            // secenekCikar
+            // 
+            this.secenekCikar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.secenekCikar.Location = new System.Drawing.Point(662, 14);
+            this.secenekCikar.Name = "secenekCikar";
+            this.secenekCikar.Properties.AllowFocused = false;
+            this.secenekCikar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.secenekCikar.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.secenekCikar.Properties.Appearance.Options.UseFont = true;
+            this.secenekCikar.Properties.Appearance.Options.UseForeColor = true;
+            this.secenekCikar.Properties.Caption = "Çıkar";
+            this.secenekCikar.Size = new System.Drawing.Size(56, 20);
+            this.secenekCikar.TabIndex = 3;
             // 
             // labelControl3
             // 
@@ -363,13 +406,14 @@
             // 
             // labelControl1
             // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(370, 5);
+            this.labelControl1.Location = new System.Drawing.Point(378, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(64, 40);
             this.labelControl1.TabIndex = 1;
@@ -377,6 +421,7 @@
             // 
             // txtBarkod
             // 
+            this.txtBarkod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBarkod.Location = new System.Drawing.Point(444, 5);
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
@@ -392,6 +437,11 @@
             this.splitterControl1.Size = new System.Drawing.Size(10, 736);
             this.splitterControl1.TabIndex = 0;
             this.splitterControl1.TabStop = false;
+            // 
+            // timerBarkod
+            // 
+            this.timerBarkod.Enabled = true;
+            this.timerBarkod.Interval = 500;
             // 
             // FrmDUK
             // 
@@ -416,6 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barkodOdaklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl5)).EndInit();
@@ -425,6 +476,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.secenekCikar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBarkod.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -461,5 +513,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SeparatorControl separatorControl5;
         private DevExpress.XtraEditors.SeparatorControl separatorControl6;
+        private DevExpress.XtraEditors.CheckEdit secenekCikar;
+        private DevExpress.XtraEditors.CheckEdit barkodOdaklama;
+        private System.Windows.Forms.Timer timerBarkod;
     }
 }

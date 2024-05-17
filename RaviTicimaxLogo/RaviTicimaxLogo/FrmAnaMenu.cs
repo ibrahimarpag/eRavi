@@ -39,8 +39,16 @@ namespace RaviTicimaxLogo
             btnKapat.Click += (s, e) => Application.Exit();
             btnDokulenUrunKontrol.Click += (s, e) =>
             {
-                var frm = new FrmSiparisListe();
-                frm.ShowDialog(this);
+                if (ProjectSettings.Yazilim == EYazilim.beyazel)
+                {
+                    var frm = new FrmSiparisListe();
+                    frm.ShowDialog(this);
+                }
+                else
+                {
+                    var frm = new FrmRaviSiparisListe();
+                    frm.ShowDialog(this);
+                }
             };
         }
         private void CenterPanel()

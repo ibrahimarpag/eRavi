@@ -86,7 +86,7 @@ namespace RaviDataManager.Models
         public string teminci_unvani { get; set; }
         #endregion
         #region Barkod
-        public string barkodu { get; set; }
+        //public string barkodu { get; set; }
         public string b_birimno { get; set; }
         public string b_birim { get; set; }
         public string b_katsayi { get; set; }

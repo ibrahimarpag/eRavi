@@ -32,17 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\eRavi\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    <Reference Include="Dapper">
+      <HintPath>..\RaviTicimaxLogo\RaviTicimaxLogo\bin\Debug\dxLibs\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\eRavi\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
+    <Reference Include="Dapper.Contrib">
+      <HintPath>..\RaviTicimaxLogo\RaviTicimaxLogo\bin\Debug\dxLibs\Dapper.Contrib.dll</HintPath>
     </Reference>
     <Reference Include="PetekKernel">
-      <HintPath>..\..\..\Ravi\Kernel\bin\Debug\PetekKernel.dll</HintPath>
+      <HintPath>..\RaviTicimaxLogo\RaviTicimaxLogo\bin\Debug\dxLibs\PetekKernel.dll</HintPath>
     </Reference>
     <Reference Include="PetekModel">
-      <HintPath>..\..\..\Ravi\Kernel\bin\Debug\PetekModel.dll</HintPath>
+      <HintPath>..\RaviTicimaxLogo\RaviTicimaxLogo\bin\Debug\dxLibs\PetekModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager\ManagerSatici.cs" />
+    <Compile Include="Manager\ManagerSiparis.cs" />
     <Compile Include="Manager\ManagerTanim.cs" />
     <Compile Include="Manager\ManagerSistem.cs" />
     <Compile Include="Manager\ManagerTakvim.cs" />
@@ -72,6 +73,8 @@
     <Compile Include="Models\RaviList.cs" />
     <Compile Include="Models\RaviResult.cs" />
     <Compile Include="Models\VIRCariTb.cs" />
+    <Compile Include="Models\VIRSiparisFis.cs" />
+    <Compile Include="Models\VIRSiparisFisDetay.cs" />
     <Compile Include="Models\VIRStokTb.cs" />
     <Compile Include="RaviEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
