@@ -95,7 +95,7 @@ namespace RaviMalzeme.Manager
             {
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Accepty", "Application/json");
-                var response = await client.GetAsync("https://ravi-versiyon.petekyazilim.com/versiyon/get/2024.03.17.1251");
+                var response = await client.GetAsync("https://ravi-versiyon.petekyazilim.com/versiyon/get/2024.05.01.0801");
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var result = await response.Content.ReadAsStringAsync();

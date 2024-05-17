@@ -58,7 +58,7 @@ namespace RaviMalzeme.Manager
                 pc3.Name = "panelControl3";
                 pc3.Size = new System.Drawing.Size(275, sayi == 0 ? 20 : 30);
                 pc3.TabIndex = 1;
-                pc3.Margin = new System.Windows.Forms.Padding(0);
+                pc3.Margin = new System.Windows.Forms.Padding(0, sayi == 0 ? 0 : 5, 0,0);
                 pc3.Padding = new System.Windows.Forms.Padding(0, sayi == 0 ? 0 : 10, 0, 0);
                 sayi++;
                 base.Controls.Add(pc3);
@@ -71,7 +71,7 @@ namespace RaviMalzeme.Manager
                     ldb.Dock = System.Windows.Forms.DockStyle.Top;
                     ldb.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
                     ldb.Name = "lblDetayBaslik";
-                    ldb.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+                    ldb.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
                     ldb.Size = new System.Drawing.Size(275, 28);
                     ldb.AutoSizeMode = LabelAutoSizeMode.Vertical;
                     ldb.TabIndex = 2;
@@ -86,9 +86,9 @@ namespace RaviMalzeme.Manager
                     lda.Size = new System.Drawing.Size(275, 0);
                     lda.AutoSizeMode = LabelAutoSizeMode.Vertical;
                     lda.TabIndex = 2;
-                    lda.Text = "E-Adisyon Entegrasyonu ile ilgili çalışgili çalışmalara başlandı.malara başlandı.";
+                    lda.Text = detay.aciklama;
                     lda.Margin = new System.Windows.Forms.Padding(0);
-                    lda.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+                    lda.Padding = new System.Windows.Forms.Padding(15, 5, 0, 0);
 
 
                     var spc1 = new SeparatorControl();

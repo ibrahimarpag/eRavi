@@ -165,7 +165,7 @@ namespace RaviMalzeme.Manager
             UstMenuAdd(new CustomBarButtonItem(), "FİRMA", "firma", RAVIUSTMENU.FIRMA);
             UstMenuAdd(new CustomBarButtonItem(), "KAPAT", "okapat", RAVIUSTMENU.KAPAT);
         }
-        private void UstMenuAdd(CustomBarButtonItem btn, string text, string resim, RAVIUSTMENU UstMenuTip, int w = 16, int h = 16)
+        private void UstMenuAdd(CustomBarButtonItem btn, string text, string resim, RAVIUSTMENU UstMenuTip, int w = 28, int h = 28)
         {
             btn.UstMenuTip = UstMenuTip;
             btn.ImageOptions.SetSvgImage(resim, w, h);

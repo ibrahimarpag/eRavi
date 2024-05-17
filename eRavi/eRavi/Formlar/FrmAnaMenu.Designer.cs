@@ -31,15 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.tabContent = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabDesktop = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelDesktop = new DevExpress.XtraEditors.PanelControl();
+            this.panelTrash = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.tabRapor = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.rbMenu = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.footerMenu = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.panelTrash = new DevExpress.XtraEditors.PanelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.solMenu = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.lookOpenForms = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -55,12 +54,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabContent)).BeginInit();
             this.tabContent.SuspendLayout();
             this.tabDesktop.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelDesktop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelTrash)).BeginInit();
             this.panelTrash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.fluentDesignFormControl1.SuspendLayout();
@@ -80,16 +78,16 @@
             this.tabContent.Controls.Add(this.tabDesktop);
             this.tabContent.Controls.Add(this.tabRapor);
             this.tabContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabContent.Location = new System.Drawing.Point(250, 108);
+            this.tabContent.Location = new System.Drawing.Point(250, 135);
             this.tabContent.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabContent.Name = "tabContent";
             this.tabContent.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
             this.tabContent.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabDesktop,
             this.tabRapor});
-            this.tabContent.RegularSize = new System.Drawing.Size(772, 691);
+            this.tabContent.RegularSize = new System.Drawing.Size(772, 664);
             this.tabContent.SelectedPage = this.tabDesktop;
-            this.tabContent.Size = new System.Drawing.Size(772, 691);
+            this.tabContent.Size = new System.Drawing.Size(772, 664);
             this.tabContent.TabIndex = 10;
             this.tabContent.Text = "tabPane1";
             // 
@@ -97,34 +95,50 @@
             // 
             this.tabDesktop.AutoScroll = true;
             this.tabDesktop.Caption = "Kısayollarım";
-            this.tabDesktop.Controls.Add(this.panel1);
+            this.tabDesktop.Controls.Add(this.panelTrash);
+            this.tabDesktop.Controls.Add(this.panelDesktop);
             this.tabDesktop.ImageOptions.Image = global::eRavi.Properties.Resources.ravilogo;
             this.tabDesktop.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabDesktop.Name = "tabDesktop";
-            this.tabDesktop.Size = new System.Drawing.Size(772, 658);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::eRavi.Properties.Resources.ravilogo;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Controls.Add(this.panelDesktop);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(772, 658);
-            this.panel1.TabIndex = 4;
+            this.tabDesktop.Size = new System.Drawing.Size(772, 631);
             // 
             // panelDesktop
             // 
-            this.panelDesktop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelDesktop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelDesktop.ContentImage = global::eRavi.Properties.Resources.ravilogo;
             this.panelDesktop.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(0, 0);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(772, 658);
+            this.panelDesktop.Size = new System.Drawing.Size(772, 631);
             this.panelDesktop.TabIndex = 3;
+            // 
+            // panelTrash
+            // 
+            this.panelTrash.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelTrash.Controls.Add(this.pictureEdit1);
+            this.panelTrash.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelTrash.Location = new System.Drawing.Point(0, 554);
+            this.panelTrash.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.panelTrash.Name = "panelTrash";
+            this.panelTrash.Size = new System.Drawing.Size(772, 77);
+            this.panelTrash.TabIndex = 1;
+            this.panelTrash.Visible = false;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Location = new System.Drawing.Point(0, 0);
+            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(772, 77);
+            this.pictureEdit1.TabIndex = 0;
+            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             // 
             // tabRapor
             // 
@@ -142,8 +156,7 @@
             this.rbMenu.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(30, 34, 30, 34);
             this.rbMenu.ExpandCollapseItem.Id = 0;
             this.rbMenu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.rbMenu.ExpandCollapseItem,
-            this.rbMenu.SearchEditItem});
+            this.rbMenu.ExpandCollapseItem});
             this.rbMenu.ItemsVertAlign = DevExpress.Utils.VertAlignment.Bottom;
             this.rbMenu.Location = new System.Drawing.Point(0, 31);
             this.rbMenu.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -158,7 +171,7 @@
             this.rbMenu.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.rbMenu.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.rbMenu.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.rbMenu.Size = new System.Drawing.Size(1022, 77);
+            this.rbMenu.Size = new System.Drawing.Size(1022, 104);
             this.rbMenu.StatusBar = this.footerMenu;
             this.rbMenu.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             this.rbMenu.Click += new System.EventHandler(this.rbMenu_Click);
@@ -183,32 +196,6 @@
             this.footerMenu.Ribbon = this.rbMenu;
             this.footerMenu.Size = new System.Drawing.Size(1022, 27);
             // 
-            // panelTrash
-            // 
-            this.panelTrash.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelTrash.Controls.Add(this.pictureEdit1);
-            this.panelTrash.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTrash.Location = new System.Drawing.Point(250, 722);
-            this.panelTrash.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panelTrash.Name = "panelTrash";
-            this.panelTrash.Size = new System.Drawing.Size(772, 77);
-            this.panelTrash.TabIndex = 1;
-            this.panelTrash.Visible = false;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.Location = new System.Drawing.Point(0, 0);
-            this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(772, 77);
-            this.pictureEdit1.TabIndex = 0;
-            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
-            // 
             // solMenu
             // 
             this.solMenu.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -218,7 +205,7 @@
             this.solMenu.Name = "solMenu";
             this.solMenu.OptionsMinimizing.AllowMinimizeMode = DevExpress.Utils.DefaultBoolean.False;
             this.solMenu.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.solMenu.Size = new System.Drawing.Size(250, 691);
+            this.solMenu.Size = new System.Drawing.Size(250, 664);
             this.solMenu.TabIndex = 11;
             // 
             // fluentDesignFormControl1
@@ -327,10 +314,10 @@
             this.panelSolMenu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelSolMenu.Controls.Add(this.solMenu);
             this.panelSolMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSolMenu.Location = new System.Drawing.Point(0, 108);
+            this.panelSolMenu.Location = new System.Drawing.Point(0, 135);
             this.panelSolMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelSolMenu.Name = "panelSolMenu";
-            this.panelSolMenu.Size = new System.Drawing.Size(250, 691);
+            this.panelSolMenu.Size = new System.Drawing.Size(250, 664);
             this.panelSolMenu.TabIndex = 12;
             this.panelSolMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -355,7 +342,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 826);
             this.Controls.Add(this.pictureEdit2);
-            this.Controls.Add(this.panelTrash);
             this.Controls.Add(this.tabContent);
             this.Controls.Add(this.panelSolMenu);
             this.Controls.Add(this.footerMenu);
@@ -369,12 +355,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabContent)).EndInit();
             this.tabContent.ResumeLayout(false);
             this.tabDesktop.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelDesktop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelTrash)).EndInit();
             this.panelTrash.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.solMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.fluentDesignFormControl1.ResumeLayout(false);
@@ -412,7 +397,6 @@
         private DevExpress.XtraBars.BarButtonItem btnTema;
         private DevExpress.XtraBars.BarButtonItem btnAcikForm;
         private DevExpress.XtraEditors.PanelControl panelSolMenu;
-        private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
     }
 }
