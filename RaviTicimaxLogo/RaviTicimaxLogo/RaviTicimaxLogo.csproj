@@ -249,6 +249,7 @@
     <EmbeddedResource Include="FrmSiparisListe.resx">
       <DependentUpon>FrmSiparisListe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -277,6 +278,9 @@
     <Content Include="Resimler\firma.svg" />
     <Content Include="Resimler\kilit.svg" />
     <Content Include="Resimler\kullanici.svg" />
+    <Content Include="Resimler\petekyazilim.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resimler\ravilogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -287,6 +291,10 @@
     <ProjectReference Include="..\..\RaviLogin\RaviLogin.csproj">
       <Project>{157ca390-a5e2-44f6-97d0-0ac6cb5d9b38}</Project>
       <Name>RaviLogin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RaviMalzeme\RaviMalzeme.csproj">
+      <Project>{a6b938a2-9f28-40a0-90f9-880d75aa4d4c}</Project>
+      <Name>RaviMalzeme</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

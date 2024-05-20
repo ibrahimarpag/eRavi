@@ -42,7 +42,7 @@ namespace eRavi.Formlar
             InitializeComponent();
             this.IconOptions.SetImage("raviikon.png");
             pictureEdit2.Image = pictureEdit2.Image.SetImage("raviikon.png");
-            this.Text = "Petek Ravi ® Ticari Tam Entegre Yazılım Sistemi - Versiyon 2024.04.04.1356, Script No: 1341";
+            this.Text = "Petek Ravi ® Ticari Tam Entegre Yazılım Sistemi - Versiyo n 2024.04.04.1356, Script No: 1341";
             //lblUygulamaAdi.ItemAppearance.Normal.Font = new Font("Tahoma", 10F);
             //lblUygulamaAdi.Caption = "Petek Ravi® Ticari Tam Entegre Yazılım Sistemi - Versiyon 2024.04.04.1356, Script No: 1341";
 
@@ -59,15 +59,8 @@ namespace eRavi.Formlar
             timer.Interval = 1000;
             timer.Tick += (sender, e) =>
             {
-                if (btnBildirim.ItemAppearance.Normal.BackColor == Color.Orange) 
-                {
-                    btnBildirim.ItemAppearance.Normal.BackColor = Color.Transparent;
-                }
-                else
-                {
-                    //Color.FromArgb(206, 221, 245)
-                    btnBildirim.ItemAppearance.Normal.BackColor = Color.Orange;
-                }
+                if (btnBildirim.ItemAppearance.Normal.BackColor == Color.Orange) btnBildirim.ItemAppearance.Normal.BackColor = Color.Transparent;
+                else btnBildirim.ItemAppearance.Normal.BackColor = Color.Orange;
             };
             timer.Start();
             btnKilitle.ImageOptions.SetSvgImage("kilit", 20, 20);

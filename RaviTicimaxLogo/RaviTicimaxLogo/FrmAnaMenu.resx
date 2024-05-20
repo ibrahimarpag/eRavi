@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureEdit1.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="imageLogo.EditValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAC7gAAANWCAYAAAButMHsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/Q90Ved9oAvnuyaYoRgTShziOA4hBBNKCMZEIQyhhFCCZUUWghJC
+        wQAADsEBuJFr7QAA/7JJREFUeF7s/Q90Ved9oAvnuyaYoRgTShziOA4hBBNKCMZEIQyhhFCCZUUWghJC
         KKWUEKpSqiiEEKKIl+FSLovr8efx8nj5evlzWR7XJdR1HdfxeFxPrsf1cj2uy3g8rsdlEYZSRlVVhSpE
         UWSsxff+9tm/o/ds/c4/6ZyjI+l5Vp6199nn397v3udIynp4/R4AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -17666,7 +17666,7 @@
 </value>
   </data>
   <assembly alias="DevExpress.Data.v23.2" name="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="simpleButton4.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMaximized.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIzLjIsIFZlcnNpb249MjMuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -17681,7 +17681,7 @@
         Pg0KPC9zdmc+Cw==
 </value>
   </data>
-  <data name="simpleButton5.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnKapat.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIzLjIsIFZlcnNpb249MjMuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -17696,7 +17696,7 @@
         Pg0KPC9zdmc+Cw==
 </value>
   </data>
-  <data name="simpleButton3.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnMinimized.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIzLjIsIFZlcnNpb249MjMuMi4z
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -17714,7 +17714,7 @@
   <data name="$this.BackgroundImageStore" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB4AAAAUACAYAAACmjU83AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7s/Wuw5lWVLnp21Y7aZ8fZO863s093R8c5Ozr6RHT0h9NxOqL7bC/I
+        wAAADsABataJCQAA/7JJREFUeF7s/Wuw5lWVLnp21Y7aZ8fZO863s093R8c5Ozr6RHT0h9NxOqL7bC/I
         RSxFrc3Z7nKX1PZeIoqKIiAqkICa3oDygiUgBSqggAoJCyXlIvdLXkgSBBFFeMm1VoIWKCsTcq03V33p
         8YwxnjHHnP//u3KhVfuU5ZwRT8w5/+9KvhO/eMb8P/XVV1999dVXX3311VdfffXV1z/Ftevf7/6Xkr+S
         bJLMWRYj8y8p511ynn+p5GVylh3BWfPShbldL1uYm3+57Qs58g3fsS8eZHvkoPlhXlHO83Le5cEZWXjF

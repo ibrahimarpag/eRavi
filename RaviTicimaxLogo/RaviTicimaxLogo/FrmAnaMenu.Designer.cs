@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnaMenu));
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.imageLogo = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnDokulenUrunKontrol = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMenuKapat = new DevExpress.XtraEditors.SimpleButton();
             this.panelCenter = new DevExpress.XtraEditors.PanelControl();
             this.btnMaximized = new DevExpress.XtraEditors.SimpleButton();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnMinimized = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageLogo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelCenter)).BeginInit();
             this.panelCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
             this.stackPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureEdit1
+            // imageLogo
             // 
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(2, 0);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.AllowFocused = false;
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.pictureEdit1.Size = new System.Drawing.Size(302, 90);
-            this.pictureEdit1.TabIndex = 0;
+            this.imageLogo.EditValue = ((object)(resources.GetObject("imageLogo.EditValue")));
+            this.imageLogo.Location = new System.Drawing.Point(22, 20);
+            this.imageLogo.Name = "imageLogo";
+            this.imageLogo.Properties.AllowFocused = false;
+            this.imageLogo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.imageLogo.Properties.Appearance.Options.UseBackColor = true;
+            this.imageLogo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.imageLogo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.imageLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.imageLogo.Size = new System.Drawing.Size(302, 90);
+            this.imageLogo.TabIndex = 0;
             // 
             // labelControl1
             // 
@@ -81,20 +81,20 @@
             this.btnDokulenUrunKontrol.Name = "btnDokulenUrunKontrol";
             this.btnDokulenUrunKontrol.Size = new System.Drawing.Size(194, 88);
             this.btnDokulenUrunKontrol.TabIndex = 2;
-            this.btnDokulenUrunKontrol.Text = "6. Madde";
+            this.btnDokulenUrunKontrol.Text = "Sipariş Liste";
             // 
-            // simpleButton2
+            // btnMenuKapat
             // 
-            this.simpleButton2.AllowFocus = false;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseTextOptions = true;
-            this.simpleButton2.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.simpleButton2.Location = new System.Drawing.Point(286, 97);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(194, 88);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Uygulamadan Çık";
+            this.btnMenuKapat.AllowFocus = false;
+            this.btnMenuKapat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMenuKapat.Appearance.Options.UseFont = true;
+            this.btnMenuKapat.Appearance.Options.UseTextOptions = true;
+            this.btnMenuKapat.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnMenuKapat.Location = new System.Drawing.Point(286, 97);
+            this.btnMenuKapat.Name = "btnMenuKapat";
+            this.btnMenuKapat.Size = new System.Drawing.Size(194, 88);
+            this.btnMenuKapat.TabIndex = 2;
+            this.btnMenuKapat.Text = "Uygulamadan Çık";
             // 
             // panelCenter
             // 
@@ -103,7 +103,7 @@
             this.panelCenter.AutoSize = true;
             this.panelCenter.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelCenter.Controls.Add(this.labelControl1);
-            this.panelCenter.Controls.Add(this.simpleButton2);
+            this.panelCenter.Controls.Add(this.btnMenuKapat);
             this.panelCenter.Controls.Add(this.btnDokulenUrunKontrol);
             this.panelCenter.Location = new System.Drawing.Point(334, 273);
             this.panelCenter.Name = "panelCenter";
@@ -121,7 +121,7 @@
             this.btnMaximized.Appearance.Options.UseFont = true;
             this.btnMaximized.Appearance.Options.UseForeColor = true;
             this.btnMaximized.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMaximized.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton4.ImageOptions.SvgImage")));
+            this.btnMaximized.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnMaximized.ImageOptions.SvgImage")));
             this.btnMaximized.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.btnMaximized.Location = new System.Drawing.Point(53, 6);
             this.btnMaximized.Name = "btnMaximized";
@@ -155,7 +155,7 @@
             this.btnKapat.Appearance.Options.UseFont = true;
             this.btnKapat.Appearance.Options.UseForeColor = true;
             this.btnKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnKapat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton5.ImageOptions.SvgImage")));
+            this.btnKapat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKapat.ImageOptions.SvgImage")));
             this.btnKapat.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.btnKapat.Location = new System.Drawing.Point(97, 6);
             this.btnKapat.Name = "btnKapat";
@@ -174,7 +174,7 @@
             this.btnMinimized.Appearance.Options.UseFont = true;
             this.btnMinimized.Appearance.Options.UseForeColor = true;
             this.btnMinimized.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnMinimized.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.btnMinimized.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnMinimized.ImageOptions.SvgImage")));
             this.btnMinimized.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.btnMinimized.Location = new System.Drawing.Point(9, 6);
             this.btnMinimized.Name = "btnMinimized";
@@ -191,7 +191,7 @@
             this.ClientSize = new System.Drawing.Size(1151, 734);
             this.Controls.Add(this.stackPanel1);
             this.Controls.Add(this.panelCenter);
-            this.Controls.Add(this.pictureEdit1);
+            this.Controls.Add(this.imageLogo);
             this.DoubleBuffered = true;
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -199,7 +199,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageLogo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelCenter)).EndInit();
             this.panelCenter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
@@ -211,10 +211,10 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.PictureEdit imageLogo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnDokulenUrunKontrol;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnMenuKapat;
         private DevExpress.XtraEditors.PanelControl panelCenter;
         private DevExpress.XtraEditors.SimpleButton btnMaximized;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;

@@ -34,7 +34,7 @@ namespace RaviTicimaxLogo
             gridView1.RowCellStyle += gridView1_RowCellStyle;
             secenekCikar.CheckedChanged += (s, e) => txtBarkod.Focus();
             this.ShowInTaskbar = false;
-            txtBarkod.Text = "Y06.01.01.086";
+            //txtBarkod.Text = "Y06.01.01.086";
             txtBarkod.KeyUp += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtBarkod.Text))

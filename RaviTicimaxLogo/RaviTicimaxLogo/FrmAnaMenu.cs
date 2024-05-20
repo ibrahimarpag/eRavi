@@ -2,6 +2,7 @@
 using DevExpress.XtraSplashScreen;
 using eRavi.Formlar.Giris;
 using PetekKernel;
+using RaviMalzeme;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,11 @@ namespace RaviTicimaxLogo
         {
             this.sirket = sirket;
             InitializeComponent();
+            imageLogo.Image=imageLogo.Image.SetImage("petekyazilim.png");
+            if (ProjectSettings.Yazilim==EYazilim.beyazel)
+            {
+                btnDokulenUrunKontrol.Text = "6. Madde";
+            }
             btnMaximized.Click += (s, e) =>
             {
                 if (this.WindowState == FormWindowState.Maximized) this.WindowState = FormWindowState.Normal;
@@ -37,6 +43,7 @@ namespace RaviTicimaxLogo
             };
             btnMinimized.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
             btnKapat.Click += (s, e) => Application.Exit();
+            btnMenuKapat.Click += (s, e) => Application.Exit();
             btnDokulenUrunKontrol.Click += (s, e) =>
             {
                 if (ProjectSettings.Yazilim == EYazilim.beyazel)
